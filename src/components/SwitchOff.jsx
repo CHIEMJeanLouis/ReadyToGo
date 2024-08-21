@@ -1,13 +1,14 @@
-const SwitchOff = () => {
+const SwitchOff = (props) => {
+  console.log(props);
   return (
     <>
       <div style={{ textAlign: "center" }}>
         <button
           className="switchoff"
           onClick={() => {
-            setSwitch1(false);
-            setSwitch2(false);
-            setSwitch3(false);
+            props.setSwitch1(false);
+            props.setSwitch2(false);
+            props.setSwitch3(false);
           }}
         >
           SWITCH OFF

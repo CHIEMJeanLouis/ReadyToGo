@@ -18,7 +18,11 @@ function App() {
 
         <main>
           <div>
-            <SwitchOff />
+            <SwitchOff
+              setSwitch1={setSwitch1}
+              setSwitch2={setSwitch2}
+              setSwitch3={setSwitch3}
+            />
             <Switch switch={switch1} setSwitch={setSwitch1} />
             <Switch switch={switch2} setSwitch={setSwitch2} />
             <Switch switch={switch3} setSwitch={setSwitch3} />
@@ -28,7 +32,7 @@ function App() {
             {switch1 + switch2 + switch3 === 3 ? (
               <button
                 onClick={() => {
-                  alert("Décollage !");
+                  alert("Décollage Orion24!");
                 }}
                 className="result"
                 style={{ backgroundColor: "green" }}
