@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Switch from "./components/Switch";
+import SwitchOff from "./components/SwitchOff";
 
 function App() {
   const [switch1, setSwitch1] = useState(false);
@@ -17,18 +18,7 @@ function App() {
 
         <main>
           <div>
-            <div style={{ textAlign: "center" }}>
-              <button
-                className="switchoff"
-                onClick={() => {
-                  setSwitch1(false);
-                  setSwitch2(false);
-                  setSwitch3(false);
-                }}
-              >
-                SWITCH OFF
-              </button>
-            </div>
+            <SwitchOff />
             <Switch switch={switch1} setSwitch={setSwitch1} />
             <Switch switch={switch2} setSwitch={setSwitch2} />
             <Switch switch={switch3} setSwitch={setSwitch3} />
@@ -36,7 +26,13 @@ function App() {
 
           <div>
             {switch1 + switch2 + switch3 === 3 ? (
-              <button className="result" style={{ backgroundColor: "green" }}>
+              <button
+                onClick={() => {
+                  alert("Décollage !");
+                }}
+                className="result"
+                style={{ backgroundColor: "green" }}
+              >
                 GO !
               </button>
             ) : (
